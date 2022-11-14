@@ -115,6 +115,15 @@ case "${action}" in
   in)   _t_in "$@";;
   out)  _t_out "$@";;
   sw)   _t_sw "$@";;
+  swl)  _t_sw "`_t_last 1`";;
+  swl2)  _t_sw "`_t_last 2`";;
+  swl3)  _t_sw "`_t_last 3`";;
+  swl4)  _t_sw "`_t_last 4`";;
+  swl5)  _t_sw "`_t_last 5`";;
+  swl6)  _t_sw "`_t_last 6`";;
+  swl7)  _t_sw "`_t_last 7`";;
+  swl8)  _t_sw "`_t_last 8`";;
+  swl9)  _t_sw "`_t_last 9`";;
   bal) _t_ledger bal "$@";;
   hours) _t_ledger bal -p "since today" "$@";;
   td) _t_ledger bal -p "since today" "$@";;
@@ -148,7 +157,7 @@ case "${action}" in
   grep) _t_do grep "$@";;
   cat)  _t_do cat "$@";;
   head)  _t_do head "$@";;
-  tail)  _t_do tail "$@";;
+  tail)  _t_do tail "$@" | grep "^i";;
   less)  _t_do less;;
   timelog) _t_timelog "$@";;
 
