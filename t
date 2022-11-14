@@ -113,6 +113,15 @@ action=$1; shift
 
 case "${action}" in
   in)   _t_in "$@";;
+  inl)   _t_in "`_t_last 1`";;
+  inl2)   _t_in "`_t_last 2`";;
+  inl3)   _t_in "`_t_last 3`";;
+  inl4)   _t_in "`_t_last 4`";;
+  inl5)   _t_in "`_t_last 5`";;
+  inl6)   _t_in "`_t_last 6`";;
+  inl7)   _t_in "`_t_last 7`";;
+  inl8)   _t_in "`_t_last 8`";;
+  inl9)   _t_in "`_t_last 9`";;
   out)  _t_out "$@";;
   sw)   _t_sw "$@";;
   swl)  _t_sw "`_t_last 1`";;
