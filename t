@@ -7,7 +7,7 @@ _t_timelog() {
 
 # Run a ledger command on the timelog
 _t_ledger() {
-  ledger -f "$timelog" "$@"
+  ledger --no-pager -f "$timelog" "$@"
 }
 
 # do something in unix with the timelog
