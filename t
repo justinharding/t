@@ -82,7 +82,7 @@ actions:
      lw,lastweek - show balance for last week
      lwd - show daily balance for last week
      edit - edit timelog file
-     cur - show currently open project
+     cur,st - show currently open project
      last - show last closed project
      last2 to last9 - show nth last closed project
      grep - grep timelog for argument
@@ -154,6 +154,7 @@ case "${action}" in
   switch)   _t_sw "$@";;
   edit) _t_do $EDITOR "$@";;
   cur)  _t_cur "$@";;
+  st)  _t_cur "$@";;
   last9) _t_last 9 "$@";;
   last8) _t_last 8 "$@";;
   last7) _t_last 7 "$@";;
