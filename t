@@ -16,6 +16,10 @@ _t_do() {
     ${action} "$@" "${timelog}"
 }
 
+_t_tail() {
+    tail -n 40 "$@" "${timelog}"
+}
+
 # Clock in to the given project
 # Clock in to the last project if no project is given
 _t_in() {
@@ -167,7 +171,7 @@ case "${action}" in
   grep) _t_do grep "$@";;
   cat)  _t_do cat "$@";;
   head)  _t_do head "$@";;
-  tail)  _t_do tail "$@" | grep "^i";;
+  tail)  _t_tail "$@" | grep "^i";;
   less)  _t_do less;;
   timelog) _t_timelog "$@";;
 
