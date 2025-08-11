@@ -89,6 +89,7 @@ actions:
      cur,st - show currently open project
      last - show last closed project
      last2 to last9 - show nth last closed project
+     last^ to last^^^^^^^^ - show nth last closed project
      grep - grep timelog for argument
      cat - show timelog
      head - show start of timelog
@@ -117,26 +118,9 @@ action=$1; shift
 
 case "${action}" in
   in)   _t_in "$@";;
-  inl)   _t_in "`_t_last 1`";;
-  inl2)   _t_in "`_t_last 2`";;
-  inl3)   _t_in "`_t_last 3`";;
-  inl4)   _t_in "`_t_last 4`";;
-  inl5)   _t_in "`_t_last 5`";;
-  inl6)   _t_in "`_t_last 6`";;
-  inl7)   _t_in "`_t_last 7`";;
-  inl8)   _t_in "`_t_last 8`";;
-  inl9)   _t_in "`_t_last 9`";;
   out)  _t_out "$@";;
   sw)   _t_sw "$@";;
-  swl)  _t_sw "`_t_last 1`";;
-  swl2)  _t_sw "`_t_last 2`";;
-  swl3)  _t_sw "`_t_last 3`";;
-  swl4)  _t_sw "`_t_last 4`";;
-  swl5)  _t_sw "`_t_last 5`";;
-  swl6)  _t_sw "`_t_last 6`";;
-  swl7)  _t_sw "`_t_last 7`";;
-  swl8)  _t_sw "`_t_last 8`";;
-  swl9)  _t_sw "`_t_last 9`";;
+  swl)  _t_sw "$(_t_last 1)";;
   bal) _t_ledger bal "$@";;
   hours) _t_ledger bal -p "since today" "$@";;
   td) _t_ledger bal -p "since today" "$@";;
@@ -159,13 +143,21 @@ case "${action}" in
   edit) _t_do $EDITOR "$@";;
   cur)  _t_cur "$@";;
   st)  _t_cur "$@";;
+  last^^^^^^^^) _t_last 9 "$@";;
   last9) _t_last 9 "$@";;
+  last^^^^^^^) _t_last 8 "$@";;
   last8) _t_last 8 "$@";;
+  last^^^^^^) _t_last 7 "$@";;
   last7) _t_last 7 "$@";;
+  last^^^^^) _t_last 6 "$@";;
   last6) _t_last 6 "$@";;
+  last^^^^) _t_last 5 "$@";;
   last5) _t_last 5 "$@";;
+  last^^^) _t_last 4 "$@";;
   last4) _t_last 4 "$@";;
+  last^^) _t_last 3 "$@";;
   last3) _t_last 3 "$@";;
+  last^) _t_last 2 "$@";;
   last2) _t_last 2 "$@";;
   last) _t_last 1 "$@";;
   grep) _t_do grep "$@";;
